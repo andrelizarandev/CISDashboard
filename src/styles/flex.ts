@@ -6,9 +6,9 @@ const FlexStyle = {
     justifyContent:'space-between'
   },
 
-  RowJustifyEndAlignCenterColumnGap3: {
+  RowJustifyEndAlignCenterColumnGap2: {
     flexDirection:'row',
-    columnGap:3,
+    columnGap:2,
     justifyContent:'end',
     alignItems:'center'
   },

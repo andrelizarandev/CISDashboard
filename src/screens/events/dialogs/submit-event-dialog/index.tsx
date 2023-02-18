@@ -42,7 +42,7 @@ function ActionButtons () {
   const { useCleanAndClose } = useGetContexts()
   const { cleanAndCloseSubmitEvent } = useCleanAndClose();
   return (
-    <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap3}>
+    <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap2}>
       <BlueButton variant='text' onClick={cleanAndCloseSubmitEvent}>Cancelar</BlueButton>
       <BlueButton variant='contained'>Guardar</BlueButton>
     </Stack>

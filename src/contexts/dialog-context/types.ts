@@ -1,4 +1,6 @@
 export type DialogContextPayload = {
+  imageToView: string | null;
+  setImageToView: React.Dispatch<React.SetStateAction<string | null>>;
   whichDialogIsOpen: DialogOptions;
   closeAnyDialog: () => void;
   setWhichDialogIsOpen: React.Dispatch<React.SetStateAction<DialogOptions>>;

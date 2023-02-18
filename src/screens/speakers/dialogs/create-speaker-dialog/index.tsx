@@ -42,7 +42,7 @@ function Form () {
 function ActionButtons () {
   const { cleanAndCloseSubmitSpeaker } = useCleanAndClose();
   return (
-    <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap3}>
+    <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap2}>
       <BlueButton onClick={cleanAndCloseSubmitSpeaker}>Cancelar</BlueButton>
       <BlueButton variant='contained'>Guardar</BlueButton>
     </Stack>

@@ -29,7 +29,6 @@ export default function Router () {
         <Routes>
           {visibleRoutes.map(({ element, route }) => <Route element={element} path={route}/>)}
           {noVisibleRoutes.map(({ element, route }) => <Route element={element} path={route}/>)}
-          
         </Routes>
       </BrowserRouter>
     </MainContextContainer>

@@ -1,6 +1,7 @@
 // Modules
 import { Stack, TextField } from '@mui/material';
 import BlueButton from '../../../../components/_buttons/blue-button';
+import SimpleSelect from '../../../../components/_selectors/simple-select';
 
 // Components
 import DialogStack from '../../../../components/_shared/dialog-stack';
@@ -33,6 +34,7 @@ function Form () {
       <TextField label='Título' size='small' variant='filled'/>
       <TextField label='Descripción' size='small' variant='filled' rows={2} multiline/>
       <TextField label='Link' size='small' variant='filled'/>
+      <SimpleSelect label='Aspecto de Anuncio' name='aspect'/>
       <ImageLoader title='Cargar Imagen de Anuncio'/>
     </>
   )
@@ -41,7 +43,7 @@ function Form () {
 function ActionButtons () {
   const { cleanAndCloseSubmitAnnouncement } = useCleanAndClose();
   return (
-    <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap3}>
+    <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap2}>
       <BlueButton onClick={cleanAndCloseSubmitAnnouncement}>Cancelar</BlueButton>
       <BlueButton variant='contained'>Guardar</BlueButton>
     </Stack>

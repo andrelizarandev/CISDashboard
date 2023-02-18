@@ -45,7 +45,7 @@ function Form () {
 function ActionButtons () {
   const { cleanAndCloseSubmitSubevent } = useCleanAndClose();
   return (
-    <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap3}>
+    <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap2}>
       <BlueButton onClick={cleanAndCloseSubmitSubevent}>Cancelar</BlueButton>
       <BlueButton variant='contained'>Guardar</BlueButton>
     </Stack>
