@@ -3,14 +3,22 @@ import { Table, TableContainer } from '@mui/material';
 
 // Components
 import HeaderRow from '../../../../components/_shared/header-row';
+import PaperStack from '../../../../components/_shared/paper-stack';
 
-export default function SpeakersTable () {
+type Props = {
+  isLoading:boolean;
+}
+
+export default function SpeakersTable (props:Props) {
+  const { isLoading } = props;
   return (
-    <TableContainer>
-      <Table>
-        <HeaderRow columns={columns}/>
-      </Table>
-    </TableContainer>
+    <PaperStack title='Ponentes Guardados' isLoading={isLoading}>
+      <TableContainer>
+        <Table>
+          <HeaderRow columns={columns}/>
+        </Table>
+      </TableContainer>
+    </PaperStack>
   )
 }
 

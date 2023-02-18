@@ -1,6 +1,9 @@
 // Modules
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
+// Contexts
+import MainContext from '../contexts';
+
 // Icons 
 import HomeIcon from '@mui/icons-material/Home';
 import GroupIcon from '@mui/icons-material/Group';
@@ -21,12 +24,15 @@ import { RouteData } from './types';
 
 export default function Router () {
   return (
-    <BrowserRouter>
-      <Routes>
-        {visibleRoutes.map(({ element, route }) => <Route element={element} path={route}/>)}
-        {noVisibleRoutes.map(({ element, route }) => <Route element={element} path={route}/>)}
-      </Routes>
-    </BrowserRouter>
+    <MainContext>
+      <BrowserRouter>
+        <Routes>
+          {visibleRoutes.map(({ element, route }) => <Route element={element} path={route}/>)}
+          {noVisibleRoutes.map(({ element, route }) => <Route element={element} path={route}/>)}
+          
+        </Routes>
+      </BrowserRouter>
+    </MainContext>
   )
 }
 
@@ -40,4 +46,5 @@ export const visibleRoutes:RouteData[] = [
 
 const noVisibleRoutes:RouteData[] = [
   { title:'Log In', element:<LogInScreen/>, route:'/log-in' },
+  { title:'Redirect', element:<Navigate to='/'/>, route:'*' },
 ] 

@@ -31,7 +31,7 @@ export function PaperStackContent (props:Props) {
     <>
       <Stack sx={PaperStackStyle.TitleContainer}>
         <Typography variant='subtitle2' textTransform='uppercase'>
-          <b>{title}</b>
+          {title}
         </Typography>
         {actionButtons}
       </Stack>
@@ -44,7 +44,7 @@ function TableSkeleton (props:Props) {
   return (
     <Stack rowGap={2}>
       <Typography variant='subtitle2' textTransform='uppercase'>
-        <b>{props.title}</b>
+        {props.title}
       </Typography>
       <Stack rowGap={2}>
         <Skeleton width='90%' variant='rounded' height={30} animation="wave"/>
