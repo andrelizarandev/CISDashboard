@@ -1,6 +1,7 @@
 // Components
 import ActionHeader from './components/action-header';
 import SpeakersTable from './components/speaker-table';
+import SpeakersFilters from './components/speakers-filters';
 import SidebarContainer from '../../containers/sidebar-container';
 
 // Dialogs
@@ -14,6 +15,7 @@ export default function SpeakersScreen () {
   return (
     <SidebarContainer title='Ponentes'>
       <ActionHeader/>
+      <SpeakersFilters/>
       <SpeakersTable isLoading={isLoading}/>
       <CreateSpeakerDialog/>
     </SidebarContainer>

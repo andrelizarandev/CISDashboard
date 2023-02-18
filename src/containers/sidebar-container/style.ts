@@ -1,5 +1,5 @@
 // Colors
-import { greyE, primaryColor } from "../../utils/colors";
+import { greyA, greyE, primaryColor } from "../../utils/colors";
 
 // Styles
 import FlexStyle from "../../styles/flex";
@@ -40,7 +40,8 @@ const SidebarContainerStyle = {
   },
 
   PageContentContainer: {
-    height:'100vh'
+    height:'100vh',
+    backgroundColor:greyA
   },
 
   PageContentPaddingContainer: {

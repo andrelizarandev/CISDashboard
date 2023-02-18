@@ -1,13 +1,15 @@
 // Modules
+import { useContext } from 'react';
 import { Button, Stack, Typography } from '@mui/material';
+
+// Contexts
+import { DialogContext } from '../../../../contexts/dialog-context';
 
 // Icons
 import AddIcon from '@mui/icons-material/Add';
 
 // Style
 import FlexStyle from '../../../../styles/flex';
-import { useContext } from 'react';
-import { DialogContext } from '../../../../contexts/dialog-context';
 
 export default function ActionHeader () {
   const { setWhichDialogIsOpen } = useContext(DialogContext);
