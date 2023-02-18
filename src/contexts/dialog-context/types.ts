@@ -8,4 +8,5 @@ export type DialogOptions =
   'submit-speaker' | 
   'submit-event' | 
   'submit-subevent' | 
+  'submit-announcement' | 
   null

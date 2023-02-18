@@ -20,8 +20,6 @@ export default function SubmitSubeventDialog () {
   const { whichDialogIsOpen } = dialogContext;
   return (
     <DialogStack 
-      onSubmit={() => {}}
-      size='sm'
       title='Agregar Subevento'
       isOpen={whichDialogIsOpen === 'submit-subevent'}
     >

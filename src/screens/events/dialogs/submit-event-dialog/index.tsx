@@ -20,8 +20,6 @@ export default function SubmitEventDialog () {
     <DialogStack 
       title='Agregar Evento'
       isOpen={whichDialogIsOpen === 'submit-event'}
-      onSubmit={() => {}}
-      size='sm'  
     >
       <Form/>
       <ActionButtons/>

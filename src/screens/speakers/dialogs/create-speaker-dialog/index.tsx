@@ -18,8 +18,6 @@ export default function CreateSpeakerDialog () {
   const { whichDialogIsOpen } = dialogContext;
   return (
     <DialogStack 
-      onSubmit={() => {}}
-      size='sm'
       title='Crear Ponente'
       isOpen={whichDialogIsOpen === 'submit-speaker'}
     >

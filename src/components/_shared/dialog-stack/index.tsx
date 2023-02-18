@@ -11,15 +11,23 @@ export type DialogStackProps = {
   title:string;
   isOpen:boolean;
   onClose?: () => void;
-  size: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg';
   children:ReactNode;
-  onSubmit:any;
+  onSubmit?:() => void;
   fullWidth?:boolean;
 }
 
 export default function DialogStack (props:DialogStackProps) {
 
-  const { isOpen, onClose = () => {}, title, size, children, onSubmit, fullWidth = true } = props;
+  const { 
+    isOpen, 
+    onClose = () => {}, 
+    title, 
+    size = 'sm', 
+    children, 
+    onSubmit = () => {}, 
+    fullWidth = true 
+  } = props;
 
   function startOnSubmit (e:any) {
     e.preventDefault();
