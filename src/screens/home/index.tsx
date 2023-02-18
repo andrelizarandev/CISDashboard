@@ -1,4 +1,5 @@
 // Modules
+import { useNavigate } from 'react-router-dom';
 import { Grid, Stack, Typography } from '@mui/material';
 
 // Components
@@ -16,14 +17,13 @@ import HomeStyle from './style';
 
 // Types
 import { OptionData } from './types';
-import { useNavigate } from 'react-router-dom';
 
 export default function HomeScreen () {
   return (
     <SidebarContainer title='Inicio'>
       <Typography variant='subtitle2' textTransform='uppercase'>Bienvenido Usuario ¿Qué harás hoy?</Typography>
       <Grid container spacing={2}>
-        {options.map((data) => <MenuOption {...data}/>)}
+        {options.map((data, key) => <MenuOption {...data} key={key}/>)}
       </Grid>
     </SidebarContainer>
   )

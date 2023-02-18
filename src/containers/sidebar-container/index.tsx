@@ -1,4 +1,5 @@
 // Modules
+import { useLocation, useNavigate } from 'react-router-dom';
 import { IconButton, Stack, Typography } from '@mui/material';
 
 // Data
@@ -13,7 +14,6 @@ import SidebarContainerStyle from './style';
 
 // Types
 import { RouteData } from '../../router/types';
-import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function SidebarContainer ({ children, title }:any) {
   return (
