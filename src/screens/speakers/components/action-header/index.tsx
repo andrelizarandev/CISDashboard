@@ -1,6 +1,9 @@
 // Modules
 import { useContext } from 'react';
-import { Button, Stack, Typography } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
+
+// Components
+import BlueButton from '../../../../components/_buttons/blue-button';
 
 // Contexts
 import { DialogContext } from '../../../../contexts/dialog-context';
@@ -16,7 +19,7 @@ export default function ActionHeader () {
   return (
     <Stack sx={FlexStyle.RowJustifyBetweenAlignCenter}>
       <Typography variant='subtitle2' textTransform='uppercase'>Acciones de Ponentes</Typography>
-      <Button size='small' variant='contained' startIcon={<AddIcon/>} onClick={() => setWhichDialogIsOpen('submit-speaker')}>Agregar Ponente</Button>
+      <BlueButton variant='contained' startIcon={<AddIcon/>} onClick={() => setWhichDialogIsOpen('submit-speaker')}>Agregar Ponente</BlueButton>
     </Stack>
   )
 }

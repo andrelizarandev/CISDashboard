@@ -4,26 +4,23 @@ import { Stack, TextField } from '@mui/material';
 
 // Components
 import BlueButton from '../../../../components/_buttons/blue-button';
-import ImageLoader from '../../../../components/_shared/image-loader';
 import DialogStack from '../../../../components/_shared/dialog-stack';
+import ImageLoader from '../../../../components/_shared/image-loader';
 
 // Contexts
 import { DialogContext } from '../../../../contexts/dialog-context';
 
-// Hooks
-import useCleanAndClose from '../../functions/cleanAndClose';
-
 // Style
 import FlexStyle from '../../../../styles/flex';
 
-export default function CreateSpeakerDialog () {
+export default function SubmitEventDialog () {
   const { whichDialogIsOpen } = useContext(DialogContext);
   return (
     <DialogStack 
+      title='Agregar Evento'
+      isOpen={whichDialogIsOpen === 'submit-event'}
       onSubmit={() => {}}
-      size='sm'
-      title='Crear Ponente'
-      isOpen={whichDialogIsOpen === 'submit-speaker'}
+      size='sm'  
     >
       <Form/>
       <ActionButtons/>
@@ -34,20 +31,18 @@ export default function CreateSpeakerDialog () {
 function Form () {
   return (
     <>
-      <TextField variant='filled' size='small' label='Nombres'/>
-      <TextField variant='filled' size='small' label='Apellidos'/>
-      <TextField variant='filled' size='small' label='Descripción Corta'/>
-      <TextField variant='filled' size='small' label='Descripción Larga' rows={3} multiline/>
-      <ImageLoader title='Cargar Foto de Perfil'/>
+      <TextField label='Nombre' variant='filled' size='small'/>
+      <TextField type='date' InputLabelProps={{ shrink: true }} label='Fecha de Inicio' variant='filled' size='small'/>
+      <TextField type='date' InputLabelProps={{ shrink: true }} label='Fecha de Finalización' variant='filled' size='small'/>
+      <ImageLoader title='Cargar Poster de Evento'/>
     </>
   )
 }
 
 function ActionButtons () {
-  const { cleanAndCloseSubmitSpeaker } = useCleanAndClose();
   return (
     <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap3}>
-      <BlueButton onClick={cleanAndCloseSubmitSpeaker}>Cancelar</BlueButton>
+      <BlueButton variant='text'>Cancelar</BlueButton>
       <BlueButton variant='contained'>Guardar</BlueButton>
     </Stack>
   )

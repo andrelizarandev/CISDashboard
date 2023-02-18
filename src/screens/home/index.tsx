@@ -1,9 +1,6 @@
 // Modules
 import { Grid, Stack, Typography } from '@mui/material';
 
-// Colors
-import { greyA, primaryColor } from '../../utils/colors';
-
 // Components
 import GridXS6MD4 from '../../components/_grids/grid-xs6-md3';
 import SidebarContainer from '../../containers/sidebar-container';
@@ -19,13 +16,12 @@ import HomeStyle from './style';
 
 // Types
 import { OptionData } from './types';
+import { useNavigate } from 'react-router-dom';
 
 export default function HomeScreen () {
   return (
     <SidebarContainer title='Inicio'>
-      <Typography variant='subtitle2' textTransform='uppercase'>
-        Bienvenido Usuario ¿Qué harás hoy?
-      </Typography>
+      <Typography variant='subtitle2' textTransform='uppercase'>Bienvenido Usuario ¿Qué harás hoy?</Typography>
       <Grid container spacing={2}>
         {options.map((data) => <MenuOption {...data}/>)}
       </Grid>
@@ -34,10 +30,12 @@ export default function HomeScreen () {
 }
 
 function MenuOption (props:OptionData) {
-  const { icon, title } = props;
+  const { icon, title, route } = props;
+  const navigate = useNavigate();
+  const redirectTo = () => navigate(route);
   return (
     <GridXS6MD4>
-      <Stack sx={HomeStyle.MenuOptionContainer}>
+      <Stack sx={HomeStyle.MenuOptionContainer} onClick={redirectTo}>
         <Stack sx={HomeStyle.MenuOptionPaddingContainer}>
           <Typography variant='subtitle2' textTransform='uppercase'>{title}</Typography>
           {icon}
@@ -48,8 +46,8 @@ function MenuOption (props:OptionData) {
 }
 
 const options:OptionData[] = [
-  { icon:<GroupIcon/>, title:'Agregar Ponentes' },
-  { icon:<StadiumIcon/>, title:'Agregar Eventos' },
-  { icon:<ConfirmationNumberIcon/>, title:'Agregar Subeventos' },
-  { icon:<CampaignIcon/>, title:'Agregar un Anuncio' },
+  { icon:<GroupIcon/>, title:'Agregar Ponentes', route:'/speakers' },
+  { icon:<StadiumIcon/>, title:'Agregar Eventos', route:'/events' },
+  { icon:<ConfirmationNumberIcon/>, title:'Agregar Subeventos', route:'/subevents' },
+  { icon:<CampaignIcon/>, title:'Agregar un Anuncio', route:'/announcements' },
 ]

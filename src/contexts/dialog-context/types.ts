@@ -6,4 +6,6 @@ export type DialogContextPayload = {
 
 export type DialogOptions = 
   'submit-speaker' | 
+  'submit-event' | 
+  'submit-subevent' | 
   null

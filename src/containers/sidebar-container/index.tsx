@@ -34,7 +34,7 @@ function TopBar ({ title }:any) {
     <Stack sx={SidebarContainerStyle.TopBarContainer}>
       <Stack sx={SidebarContainerStyle.TopBarPaddingContainer}>
         <Typography variant='subtitle2' textTransform='uppercase'>{title}</Typography>
-        <Stack sx={FlexStyle.RowAlignCenterColumnGap2}>
+        <Stack sx={FlexStyle.RowAlignCenterColumnGap1}>
           <Typography variant='subtitle2' textTransform='uppercase'>Usuario</Typography>
           <IconButton>
             <AccountCircleIcon  sx={{ color:'white' }}/>

@@ -1,5 +1,6 @@
 // Modules
-import { Button, Grid, Stack, TextField } from '@mui/material';
+import { Grid, Stack, TextField } from '@mui/material';
+import BlueButton from '../../components/_buttons/blue-button';
 
 // Components
 import GridXS0MD6LG8 from '../../components/_grids/grid-xs0-md6-lg8';
@@ -56,7 +57,7 @@ function FormCard () {
         label='Contraseña' 
       />
 
-      <Button variant='contained' size='small'>Iniciar Sesión</Button>
+      <BlueButton variant='contained'>Iniciar Sesión</BlueButton>
 
     </PaperStack>
   )
