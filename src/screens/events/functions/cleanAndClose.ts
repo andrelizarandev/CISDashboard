@@ -1,9 +1,9 @@
 // Hooks
-import useGetGlobalContexts from '../../../contexts';
+import useGlobalContexts from '../../../contexts';
 
 export default function useCleanAndClose () {
 
-  const { dialogContext } = useGetGlobalContexts();
+  const { dialogContext } = useGlobalContexts();
   const { closeAnyDialog } = dialogContext;
   
   function cleanAndCloseSubmitEvent () {

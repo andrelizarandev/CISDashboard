@@ -9,10 +9,10 @@ import {
 } from '@mui/material';
 
 // Colors
-import { blue500 } from '../../../utils/colors';
+import { primaryColor } from '../../../utils/colors';
 
 // Types
-import { OptionData } from '../simple-selector/types';
+import { OptionData } from '../simple-select/types';
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -25,17 +25,17 @@ const MenuProps = {
 };
 
 type Props = {
-  options:OptionData[];
-  value:number[];
+  options?:OptionData[];
+  value?:number[];
   label:string;
   name:string;
   disabled?:boolean;
-  onChange:(e:any) => void;
+  onChange?:(e:any) => void;
 }
 
 export default function MultipleSelect (props:Props) {
   
-  const { label, name, onChange, options, value, disabled } = props;
+  const { label, name, onChange = () => {}, options = [], value = [], disabled } = props;
 
   function getNameValues (values:number[]) {
     const labelValues = values.map((id) => {
@@ -62,7 +62,7 @@ export default function MultipleSelect (props:Props) {
       >
         {options.map((option) => (
           <MenuItem key={option.id} value={option.id}>
-            <Checkbox checked={value.indexOf(option.id) > -1} sx={checkStyle} color='success'/>
+            <Checkbox checked={value.indexOf(option.id) > -1} sx={checkStyle}/>
             <ListItemText primary={option.label} />
           </MenuItem>
         ))}
@@ -73,6 +73,6 @@ export default function MultipleSelect (props:Props) {
 
 const checkStyle = {
   '&.Mui-checked': {
-    color: blue500,
+    color: primaryColor,
   },
 }

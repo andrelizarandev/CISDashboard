@@ -8,13 +8,13 @@ import ImageLoader from '../../../../components/_shared/image-loader';
 
 // Hooks
 import useGetContexts from '../../functions';
-import useGetGlobalContexts from '../../../../contexts';
+import useGlobalContexts from '../../../../contexts';
 
 // Style
 import FlexStyle from '../../../../styles/flex';
 
 export default function SubmitEventDialog () {
-  const { dialogContext } = useGetGlobalContexts();
+  const { dialogContext } = useGlobalContexts();
   const { whichDialogIsOpen } = dialogContext;
   return (
     <DialogStack 

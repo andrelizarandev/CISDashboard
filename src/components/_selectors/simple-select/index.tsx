@@ -7,7 +7,7 @@ import { OptionData } from './types';
 
 type Props = {
   value?:number;
-  onChange:(e:any) => void;
+  onChange?:(e:any) => void;
   label:string;
   name:string;
   disabled?:boolean;
@@ -16,9 +16,9 @@ type Props = {
 
 const firstOption = { label:'-', id:0 }
 
-export default function SimpleSelector (props:Props) {
+export default function SimpleSelect (props:Props) {
 
-  const { value = 0, onChange, label, name, disabled = false, options = [] } = props;
+  const { value = 0, onChange = () => {}, label, name, disabled = false, options = [] } = props;
   const [ savedOptions, setSavedOptions ] = useState<OptionData[]>([firstOption]);
 
   useEffect(() => {

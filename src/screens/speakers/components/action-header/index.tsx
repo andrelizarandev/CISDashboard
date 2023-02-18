@@ -5,7 +5,7 @@ import { Stack, Typography } from '@mui/material';
 import BlueButton from '../../../../components/_buttons/blue-button';
 
 // Hooks
-import useGetGlobalContexts from '../../../../contexts';
+import useGlobalContexts from '../../../../contexts';
 
 // Icons
 import AddIcon from '@mui/icons-material/Add';
@@ -14,7 +14,7 @@ import AddIcon from '@mui/icons-material/Add';
 import FlexStyle from '../../../../styles/flex';
 
 export default function ActionHeader () {
-  const { dialogContext } = useGetGlobalContexts();
+  const { dialogContext } = useGlobalContexts();
   const { setWhichDialogIsOpen } = dialogContext;
   return (
     <Stack sx={FlexStyle.RowJustifyBetweenAlignCenter}>

@@ -7,14 +7,14 @@ import ImageLoader from '../../../../components/_shared/image-loader';
 import DialogStack from '../../../../components/_shared/dialog-stack';
 
 // Hooks
-import useGetGlobalContexts from '../../../../contexts';
+import useGlobalContexts from '../../../../contexts';
 import useCleanAndClose from '../../functions/cleanAndClose';
 
 // Style
 import FlexStyle from '../../../../styles/flex';
 
 export default function CreateSpeakerDialog () {
-  const { dialogContext } = useGetGlobalContexts();
+  const { dialogContext } = useGlobalContexts();
   const { whichDialogIsOpen } = dialogContext;
   return (
     <DialogStack 
