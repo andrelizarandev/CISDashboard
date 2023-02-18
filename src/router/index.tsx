@@ -2,7 +2,7 @@
 import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 
 // Contexts
-import MainContext from '../contexts';
+import MainContextContainer from '../containers/context-container';
 
 // Icons 
 import HomeIcon from '@mui/icons-material/Home';
@@ -24,7 +24,7 @@ import { RouteData } from './types';
 
 export default function Router () {
   return (
-    <MainContext>
+    <MainContextContainer>
       <BrowserRouter>
         <Routes>
           {visibleRoutes.map(({ element, route }) => <Route element={element} path={route}/>)}
@@ -32,7 +32,7 @@ export default function Router () {
           
         </Routes>
       </BrowserRouter>
-    </MainContext>
+    </MainContextContainer>
   )
 }
 

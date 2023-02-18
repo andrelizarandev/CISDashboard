@@ -1,5 +1,4 @@
 // Modules
-import { useContext } from 'react';
 import { Stack, TextField } from '@mui/material';
 
 // Components
@@ -7,14 +6,16 @@ import BlueButton from '../../../../components/_buttons/blue-button';
 import DialogStack from '../../../../components/_shared/dialog-stack';
 import ImageLoader from '../../../../components/_shared/image-loader';
 
-// Contexts
-import { DialogContext } from '../../../../contexts/dialog-context';
+// Hooks
+import useGetContexts from '../../functions';
+import useGetGlobalContexts from '../../../../contexts';
 
 // Style
 import FlexStyle from '../../../../styles/flex';
 
 export default function SubmitEventDialog () {
-  const { whichDialogIsOpen } = useContext(DialogContext);
+  const { dialogContext } = useGetGlobalContexts();
+  const { whichDialogIsOpen } = dialogContext;
   return (
     <DialogStack 
       title='Agregar Evento'
@@ -40,9 +41,11 @@ function Form () {
 }
 
 function ActionButtons () {
+  const { useCleanAndClose } = useGetContexts()
+  const { cleanAndCloseSubmitEvent } = useCleanAndClose();
   return (
     <Stack sx={FlexStyle.RowJustifyEndAlignCenterColumnGap3}>
-      <BlueButton variant='text'>Cancelar</BlueButton>
+      <BlueButton variant='text' onClick={cleanAndCloseSubmitEvent}>Cancelar</BlueButton>
       <BlueButton variant='contained'>Guardar</BlueButton>
     </Stack>
   )

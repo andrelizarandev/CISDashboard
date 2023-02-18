@@ -1,12 +1,11 @@
 // Modules
-import { useContext } from 'react';
 import { Stack, Typography } from '@mui/material';
 
 // Components
 import BlueButton from '../../../../components/_buttons/blue-button';
 
-// Contexts
-import { DialogContext } from '../../../../contexts/dialog-context';
+// Hooks
+import useGetGlobalContexts from '../../../../contexts';
 
 // Icons
 import AddIcon from '@mui/icons-material/Add';
@@ -15,7 +14,8 @@ import AddIcon from '@mui/icons-material/Add';
 import FlexStyle from '../../../../styles/flex';
 
 export default function ActionHeader () {
-  const { setWhichDialogIsOpen } = useContext(DialogContext);
+  const { dialogContext } = useGetGlobalContexts();
+  const { setWhichDialogIsOpen } = dialogContext;
   return (
     <Stack sx={FlexStyle.RowJustifyBetweenAlignCenter}>
       <Typography variant='subtitle2' textTransform='uppercase'>Acciones de Ponentes</Typography>

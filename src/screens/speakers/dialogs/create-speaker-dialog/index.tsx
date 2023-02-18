@@ -1,5 +1,4 @@
 // Modules
-import { useContext } from 'react';
 import { Stack, TextField } from '@mui/material';
 
 // Components
@@ -7,17 +6,16 @@ import BlueButton from '../../../../components/_buttons/blue-button';
 import ImageLoader from '../../../../components/_shared/image-loader';
 import DialogStack from '../../../../components/_shared/dialog-stack';
 
-// Contexts
-import { DialogContext } from '../../../../contexts/dialog-context';
-
 // Hooks
+import useGetGlobalContexts from '../../../../contexts';
 import useCleanAndClose from '../../functions/cleanAndClose';
 
 // Style
 import FlexStyle from '../../../../styles/flex';
 
 export default function CreateSpeakerDialog () {
-  const { whichDialogIsOpen } = useContext(DialogContext);
+  const { dialogContext } = useGetGlobalContexts();
+  const { whichDialogIsOpen } = dialogContext;
   return (
     <DialogStack 
       onSubmit={() => {}}

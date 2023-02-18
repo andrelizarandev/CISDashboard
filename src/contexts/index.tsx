@@ -1,13 +1,15 @@
 // Modules
-import UiContextContainer from './ui-context';
-import DialogContextContainer from './dialog-context';
+import { useContext } from 'react';
 
-export default function MainContext ({ children }:any) {
-  return (
-    <UiContextContainer>
-      <DialogContextContainer>
-        {children}
-      </DialogContextContainer>
-    </UiContextContainer>
-  )
+// Contexts
+import { DialogContext } from './dialog-context'
+
+export default function useGetGlobalContexts () {
+
+  const dialogContext = useContext(DialogContext);
+
+  return {
+    dialogContext
+  }
+
 }
