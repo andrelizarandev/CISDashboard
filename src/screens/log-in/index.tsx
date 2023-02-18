@@ -41,7 +41,7 @@ function FormContainer () {
 
 function FormCard () {
   return (
-    <PaperStack title='Iniciar Sesión'>
+    <PaperStack title='CIS Dashboard'>
 
       <TextField 
         variant='filled'

@@ -36,7 +36,7 @@ export default function Router () {
 }
 
 export const visibleRoutes:RouteData[] = [
-  { title:'Inicio', element:<HomeScreen/>, route:'/', icon:<HomeIcon/> },
+  { title:'Inicio', element:<HomeScreen/>, route:'/home', icon:<HomeIcon/> },
   { title:'Ponentes', element:<SpeakersScreen/>, route:'/speakers', icon:<GroupIcon/> },
   { title:'Eventos', element:<EventsScreen/>, route:'/events', icon:<StadiumIcon/> },
   { title:'Subeventos', element:<SubeventsScreen/>, route:'/subevents', icon:<ConfirmationNumberIcon/> },
@@ -44,6 +44,6 @@ export const visibleRoutes:RouteData[] = [
 ]
 
 const noVisibleRoutes:RouteData[] = [
-  { title:'Log In', element:<LogInScreen/>, route:'/log-in' },
-  { title:'Redirect', element:<Navigate to='/'/>, route:'*' },
+  { title:'Log In', element:<LogInScreen/>, route:'/' },
+  { title:'Redirect', element:<Navigate to='/home'/>, route:'*' },
 ] 
